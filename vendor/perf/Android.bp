@@ -388,6 +388,7 @@ cc_prebuilt_library_shared {
                 "libcutils",
                 "liblearningmodule",
                 "liblmutils-ns",
+                "libq-perflog",
                 "libc++",
                 "libc",
                 "libm",
@@ -670,6 +671,8 @@ cc_prebuilt_library_shared {
                 "libhidlbase",
                 "libutils",
                 "liblmutils-ns",
+                "libq-perflog",
+                "libqti-perfd-client",
                 "vendor.qti.hardware.servicetracker@1.0",
                 "vendor.qti.hardware.servicetracker@1.1",
                 "libprotobuf-cpp-full",
@@ -699,6 +702,7 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "liblog",
                 "libcutils",
+                "libq-perflog",
                 "liblearningmodule",
                 "libmeters-ns",
                 "libsqlite",
@@ -1657,33 +1661,6 @@ cc_prebuilt_binary {
     },
     prefer: true,
     relative_install_path: "hw",
-    soc_specific: true,
-}
-
-cc_prebuilt_binary {
-    name: "msm_irqbalance",
-    owner: "qcom",
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/bin/msm_irqbalance",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libutils",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    strip: {
-        none: true,
-    },
-    prefer: true,
     soc_specific: true,
 }
 

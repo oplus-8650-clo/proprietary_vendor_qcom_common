@@ -70,6 +70,5 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.iop@2.0-service \
     vendor.qti.hardware.perf2-hal-service \
     vendor.qti.hardware.servicetrackeraidl-service \
-    msm_irqbalance \
     poweropt-service \
     vendor.qti.qspmhal-service
