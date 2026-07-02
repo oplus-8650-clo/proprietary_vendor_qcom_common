@@ -4,11 +4,8 @@
 
 soong_namespace {
     imports: [
-        "hardware/qcom/display",
-        "vendor/qcom/common/vendor/display/4.19",
-        "vendor/qcom/common/vendor/display/5.10",
-        "vendor/qcom/common/vendor/display/5.15",
-        "vendor/qcom/common/vendor/display/5.4",
+        "hardware/qcom/u",
+        "vendor/qcom/opensource/commonsys-intf/display",
     ],
 }
 
@@ -356,7 +353,7 @@ cc_prebuilt_library_shared {
                 "libcutils",
                 "liblearningmodule",
                 "libperfgluelayer",
-                "libprotobuf-cpp-lite",
+                "libprotobuf-cpp-lite-21.7",
                 "libcrypto",
                 "libz",
                 "libbinder_ndk",
@@ -675,7 +672,7 @@ cc_prebuilt_library_shared {
                 "libqti-perfd-client",
                 "vendor.qti.hardware.servicetracker@1.0",
                 "vendor.qti.hardware.servicetracker@1.1",
-                "libprotobuf-cpp-full",
+                "libprotobuf-cpp-full-21.7",
                 "libc++",
                 "libc",
                 "libm",
