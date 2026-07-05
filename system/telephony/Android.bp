@@ -60,34 +60,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.radio.internal.deviceinfo@1.0",
-    owner: "qcom",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/product/lib64/vendor.qti.hardware.radio.internal.deviceinfo@1.0.so",
-            ],
-            shared_libs: [
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    product_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "vendor.qti.hardware.radio.qcrilhook@1.0",
     owner: "qcom",
     strip: {
@@ -746,7 +718,7 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libdiag_system.qti",
+    name: "libSurfaceUtil_jni",
     owner: "qcom",
     strip: {
         none: true,
@@ -754,21 +726,15 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/system_ext/lib64/libdiag_system.qti.so",
+                "proprietary/system_ext/lib64/libSurfaceUtil_jni.so",
             ],
             shared_libs: [
-                "vendor.qti.diaghal@1.0",
-                "libhidlbase",
-                "liblog",
+                "libbinder",
+                "libgui",
+                "libnativehelper",
                 "libutils",
-                "android.hidl.allocator@1.0",
-                "android.hidl.memory@1.0",
-                "libhidlmemory",
-                "libc",
-                "libcutils",
-                "libbinder_ndk",
-                "vendor.qti.diaghal-V1-ndk",
                 "libc++",
+                "libc",
                 "libm",
                 "libdl",
             ],
@@ -1037,65 +1003,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libimscamera_jni",
-    owner: "qcom",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/system_ext/lib64/libimscamera_jni.so",
-            ],
-            shared_libs: [
-                "libnativehelper",
-                "libcutils",
-                "libutils",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libimsmedia_jni",
-    owner: "qcom",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/system_ext/lib64/libimsmedia_jni.so",
-            ],
-            shared_libs: [
-                "libnativehelper",
-                "libcutils",
-                "libutils",
-                "libgui",
-                "libbinder",
-                "liblog",
-                "libandroid",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libjnihelpers",
     owner: "qcom",
     strip: {
@@ -1107,91 +1014,6 @@ cc_prebuilt_library_shared {
                 "proprietary/system_ext/lib64/libjnihelpers.so",
             ],
             shared_libs: [
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmink-sock-native-api",
-    owner: "qcom",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/system_ext/lib64/libmink-sock-native-api.so",
-            ],
-            shared_libs: [
-                "libminkipcbinder_system",
-                "liblog",
-                "libminksocket_system",
-                "libjnihelpers",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libminkipcbinder_system",
-    owner: "qcom",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/system_ext/lib64/libminkipcbinder_system.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libutils",
-                "liblog",
-                "libbinder_ndk",
-                "vendor.qti.hardware.minkipcbinder-V1-ndk",
-                "libbinder",
-                "libjsoncpp",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libminksocket_system",
-    owner: "qcom",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/system_ext/lib64/libminksocket_system.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "liblog",
                 "libc++",
                 "libc",
                 "libm",
@@ -1732,213 +1554,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.qti.data.factory@2.5",
-    owner: "qcom",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/system_ext/lib64/vendor.qti.data.factory@2.5.so",
-            ],
-            shared_libs: [
-                "vendor.qti.data.factory@2.0",
-                "vendor.qti.data.factory@2.1",
-                "vendor.qti.data.factory@2.2",
-                "vendor.qti.data.factory@2.3",
-                "vendor.qti.data.factory@2.4",
-                "vendor.qti.data.mwqem@1.0",
-                "vendor.qti.data.slm@1.0",
-                "vendor.qti.hardware.data.cne.internal.api@1.0",
-                "vendor.qti.hardware.data.cne.internal.constants@1.0",
-                "vendor.qti.hardware.data.cne.internal.server@1.0",
-                "vendor.qti.hardware.data.cne.internal.server@1.1",
-                "vendor.qti.hardware.data.cne.internal.server@1.2",
-                "vendor.qti.hardware.data.dynamicdds@1.0",
-                "vendor.qti.hardware.data.flow@1.0",
-                "vendor.qti.hardware.data.lce@1.0",
-                "vendor.qti.hardware.data.qmi@1.0",
-                "vendor.qti.ims.rcsconfig@1.0",
-                "vendor.qti.ims.rcsconfig@1.1",
-                "vendor.qti.latency@2.0",
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.qti.data.factory@2.6",
-    owner: "qcom",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/system_ext/lib64/vendor.qti.data.factory@2.6.so",
-            ],
-            shared_libs: [
-                "vendor.qti.data.factory@2.0",
-                "vendor.qti.data.factory@2.1",
-                "vendor.qti.data.factory@2.2",
-                "vendor.qti.data.factory@2.3",
-                "vendor.qti.data.factory@2.4",
-                "vendor.qti.data.factory@2.5",
-                "vendor.qti.data.mwqem@1.0",
-                "vendor.qti.data.slm@1.0",
-                "vendor.qti.hardware.data.cne.internal.api@1.0",
-                "vendor.qti.hardware.data.cne.internal.constants@1.0",
-                "vendor.qti.hardware.data.cne.internal.server@1.0",
-                "vendor.qti.hardware.data.cne.internal.server@1.1",
-                "vendor.qti.hardware.data.cne.internal.server@1.2",
-                "vendor.qti.hardware.data.cne.internal.server@1.3",
-                "vendor.qti.hardware.data.dynamicdds@1.0",
-                "vendor.qti.hardware.data.flow@1.0",
-                "vendor.qti.hardware.data.lce@1.0",
-                "vendor.qti.hardware.data.qmi@1.0",
-                "vendor.qti.ims.rcsconfig@1.0",
-                "vendor.qti.ims.rcsconfig@1.1",
-                "vendor.qti.latency@2.0",
-                "vendor.qti.latency@2.1",
-                "vendor.qti.latency@2.2",
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.qti.data.factory@2.7",
-    owner: "qcom",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/system_ext/lib64/vendor.qti.data.factory@2.7.so",
-            ],
-            shared_libs: [
-                "vendor.qti.data.factory@2.0",
-                "vendor.qti.data.factory@2.1",
-                "vendor.qti.data.factory@2.2",
-                "vendor.qti.data.factory@2.3",
-                "vendor.qti.data.factory@2.4",
-                "vendor.qti.data.factory@2.5",
-                "vendor.qti.data.factory@2.6",
-                "vendor.qti.data.mwqem@1.0",
-                "vendor.qti.data.slm@1.0",
-                "vendor.qti.hardware.data.cne.internal.api@1.0",
-                "vendor.qti.hardware.data.cne.internal.constants@1.0",
-                "vendor.qti.hardware.data.cne.internal.server@1.0",
-                "vendor.qti.hardware.data.cne.internal.server@1.1",
-                "vendor.qti.hardware.data.cne.internal.server@1.2",
-                "vendor.qti.hardware.data.cne.internal.server@1.3",
-                "vendor.qti.hardware.data.dynamicdds@1.0",
-                "vendor.qti.hardware.data.flow@1.0",
-                "vendor.qti.hardware.data.flow@1.1",
-                "vendor.qti.hardware.data.lce@1.0",
-                "vendor.qti.hardware.data.qmi@1.0",
-                "vendor.qti.ims.rcsconfig@1.0",
-                "vendor.qti.ims.rcsconfig@1.1",
-                "vendor.qti.latency@2.0",
-                "vendor.qti.latency@2.1",
-                "vendor.qti.latency@2.2",
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.qti.data.factory@2.8",
-    owner: "qcom",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/system_ext/lib64/vendor.qti.data.factory@2.8.so",
-            ],
-            shared_libs: [
-                "android.hidl.safe_union@1.0",
-                "vendor.qti.data.factory@2.0",
-                "vendor.qti.data.factory@2.1",
-                "vendor.qti.data.factory@2.2",
-                "vendor.qti.data.factory@2.3",
-                "vendor.qti.data.factory@2.4",
-                "vendor.qti.data.factory@2.5",
-                "vendor.qti.data.factory@2.6",
-                "vendor.qti.data.factory@2.7",
-                "vendor.qti.data.mwqem@1.0",
-                "vendor.qti.data.slm@1.0",
-                "vendor.qti.hardware.data.cne.internal.api@1.0",
-                "vendor.qti.hardware.data.cne.internal.constants@1.0",
-                "vendor.qti.hardware.data.cne.internal.server@1.0",
-                "vendor.qti.hardware.data.cne.internal.server@1.1",
-                "vendor.qti.hardware.data.cne.internal.server@1.2",
-                "vendor.qti.hardware.data.cne.internal.server@1.3",
-                "vendor.qti.hardware.data.dynamicdds@1.0",
-                "vendor.qti.hardware.data.flow@1.0",
-                "vendor.qti.hardware.data.flow@1.1",
-                "vendor.qti.hardware.data.lce@1.0",
-                "vendor.qti.hardware.data.qmi@1.0",
-                "vendor.qti.ims.rcsconfig@1.0",
-                "vendor.qti.ims.rcsconfig@1.1",
-                "vendor.qti.latency@2.0",
-                "vendor.qti.latency@2.1",
-                "vendor.qti.latency@2.2",
-                "vendor.qti.latency@2.3",
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "vendor.qti.data.factoryservice-V1-ndk",
     owner: "qcom",
     strip: {
@@ -2421,63 +2036,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.data.connection@1.0",
-    owner: "qcom",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/system_ext/lib64/vendor.qti.hardware.data.connection@1.0.so",
-            ],
-            shared_libs: [
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.data.connection@1.1",
-    owner: "qcom",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/system_ext/lib64/vendor.qti.hardware.data.connection@1.1.so",
-            ],
-            shared_libs: [
-                "vendor.qti.hardware.data.connection@1.0",
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "vendor.qti.hardware.data.connectionfactory-V1-ndk",
     owner: "qcom",
     strip: {
@@ -2803,34 +2361,6 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "libbinder_ndk",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.data.latency@1.0",
-    owner: "qcom",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/system_ext/lib64/vendor.qti.hardware.data.latency@1.0.so",
-            ],
-            shared_libs: [
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
                 "libc++",
                 "libc",
                 "libm",
@@ -3546,124 +3076,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.radio.lpa@1.0",
-    owner: "qcom",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/system_ext/lib64/vendor.qti.hardware.radio.lpa@1.0.so",
-            ],
-            shared_libs: [
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.radio.lpa@1.1",
-    owner: "qcom",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/system_ext/lib64/vendor.qti.hardware.radio.lpa@1.1.so",
-            ],
-            shared_libs: [
-                "vendor.qti.hardware.radio.lpa@1.0",
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.radio.lpa@1.2",
-    owner: "qcom",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/system_ext/lib64/vendor.qti.hardware.radio.lpa@1.2.so",
-            ],
-            shared_libs: [
-                "vendor.qti.hardware.radio.lpa@1.0",
-                "vendor.qti.hardware.radio.lpa@1.1",
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.radio.lpa@1.3",
-    owner: "qcom",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/system_ext/lib64/vendor.qti.hardware.radio.lpa@1.3.so",
-            ],
-            shared_libs: [
-                "vendor.qti.hardware.radio.lpa@1.0",
-                "vendor.qti.hardware.radio.lpa@1.1",
-                "vendor.qti.hardware.radio.lpa@1.2",
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "vendor.qti.hardware.radio.qtiradio@1.0",
     owner: "qcom",
     strip: {
@@ -3946,208 +3358,6 @@ cc_prebuilt_library_shared {
                 "vendor.qti.hardware.radio.qtiradio@2.4",
                 "vendor.qti.hardware.radio.qtiradio@2.5",
                 "vendor.qti.hardware.radio.qtiradio@2.6",
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.radio.uim@1.0",
-    owner: "qcom",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/system_ext/lib64/vendor.qti.hardware.radio.uim@1.0.so",
-            ],
-            shared_libs: [
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.radio.uim@1.1",
-    owner: "qcom",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/system_ext/lib64/vendor.qti.hardware.radio.uim@1.1.so",
-            ],
-            shared_libs: [
-                "vendor.qti.hardware.radio.uim@1.0",
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.radio.uim@1.2",
-    owner: "qcom",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/system_ext/lib64/vendor.qti.hardware.radio.uim@1.2.so",
-            ],
-            shared_libs: [
-                "vendor.qti.hardware.radio.uim@1.0",
-                "vendor.qti.hardware.radio.uim@1.1",
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.radio.uim_remote_client@1.0",
-    owner: "qcom",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/system_ext/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0.so",
-            ],
-            shared_libs: [
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.radio.uim_remote_client@1.1",
-    owner: "qcom",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/system_ext/lib64/vendor.qti.hardware.radio.uim_remote_client@1.1.so",
-            ],
-            shared_libs: [
-                "vendor.qti.hardware.radio.uim_remote_client@1.0",
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.radio.uim_remote_client@1.2",
-    owner: "qcom",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/system_ext/lib64/vendor.qti.hardware.radio.uim_remote_client@1.2.so",
-            ],
-            shared_libs: [
-                "vendor.qti.hardware.radio.uim_remote_client@1.0",
-                "vendor.qti.hardware.radio.uim_remote_client@1.1",
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.radio.uim_remote_server@1.0",
-    owner: "qcom",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/system_ext/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so",
-            ],
-            shared_libs: [
                 "libhidlbase",
                 "liblog",
                 "libutils",
@@ -5304,75 +4514,9 @@ cc_prebuilt_library_shared {
 }
 
 android_app_import {
-    name: "ConferenceDialer",
-    owner: "qcom",
-    apk: "proprietary/product/app/ConferenceDialer/ConferenceDialer.apk",
-    certificate: "platform",
-    dex_preopt: {
-        enabled: false,
-    },
-    product_specific: true,
-}
-
-android_app_import {
-    name: "DeviceStatisticsService",
-    owner: "qcom",
-    apk: "proprietary/product/app/DeviceStatisticsService/DeviceStatisticsService.apk",
-    certificate: "platform",
-    dex_preopt: {
-        enabled: false,
-    },
-    product_specific: true,
-}
-
-android_app_import {
-    name: "datastatusnotification",
-    owner: "qcom",
-    apk: "proprietary/product/app/datastatusnotification/datastatusnotification.apk",
-    certificate: "platform",
-    dex_preopt: {
-        enabled: false,
-    },
-    product_specific: true,
-}
-
-android_app_import {
-    name: "remoteSimLockAuthentication",
-    owner: "qcom",
-    apk: "proprietary/product/app/remoteSimLockAuthentication/remoteSimLockAuthentication.apk",
-    certificate: "platform",
-    dex_preopt: {
-        enabled: false,
-    },
-    product_specific: true,
-}
-
-android_app_import {
-    name: "remotesimlockservice",
-    owner: "qcom",
-    apk: "proprietary/product/app/remotesimlockservice/remotesimlockservice.apk",
-    certificate: "platform",
-    dex_preopt: {
-        enabled: false,
-    },
-    product_specific: true,
-}
-
-android_app_import {
     name: "uimgbaservice",
     owner: "qcom",
     apk: "proprietary/product/app/uimgbaservice/uimgbaservice.apk",
-    certificate: "platform",
-    dex_preopt: {
-        enabled: false,
-    },
-    product_specific: true,
-}
-
-android_app_import {
-    name: "uimlpaservice",
-    owner: "qcom",
-    apk: "proprietary/product/app/uimlpaservice/uimlpaservice.apk",
     certificate: "platform",
     dex_preopt: {
         enabled: false,
@@ -5403,53 +4547,9 @@ android_app_import {
 }
 
 android_app_import {
-    name: "AtFwd2",
-    owner: "qcom",
-    apk: "proprietary/system_ext/app/AtFwd2/AtFwd2.apk",
-    certificate: "platform",
-    dex_preopt: {
-        enabled: false,
-    },
-    system_ext_specific: true,
-}
-
-android_app_import {
-    name: "DeviceInfo",
-    owner: "qcom",
-    apk: "proprietary/system_ext/app/DeviceInfo/DeviceInfo.apk",
-    certificate: "platform",
-    dex_preopt: {
-        enabled: false,
-    },
-    system_ext_specific: true,
-}
-
-android_app_import {
-    name: "DynamicDDSService",
-    owner: "qcom",
-    apk: "proprietary/system_ext/app/DynamicDDSService/DynamicDDSService.apk",
-    certificate: "platform",
-    dex_preopt: {
-        enabled: false,
-    },
-    system_ext_specific: true,
-}
-
-android_app_import {
     name: "ImsDataChannelService",
     owner: "qcom",
     apk: "proprietary/system_ext/app/ImsDataChannelService/ImsDataChannelService.apk",
-    certificate: "platform",
-    dex_preopt: {
-        enabled: false,
-    },
-    system_ext_specific: true,
-}
-
-android_app_import {
-    name: "ImsRcsService",
-    owner: "qcom",
-    apk: "proprietary/system_ext/app/ImsRcsService/ImsRcsService.apk",
     certificate: "platform",
     dex_preopt: {
         enabled: false,
@@ -5469,17 +4569,6 @@ android_app_import {
 }
 
 android_app_import {
-    name: "SimContact",
-    owner: "qcom",
-    apk: "proprietary/system_ext/app/SimContact/SimContact.apk",
-    certificate: "platform",
-    dex_preopt: {
-        enabled: false,
-    },
-    system_ext_specific: true,
-}
-
-android_app_import {
     name: "atfwd",
     owner: "qcom",
     apk: "proprietary/system_ext/app/atfwd/atfwd.apk",
@@ -5487,29 +4576,6 @@ android_app_import {
     dex_preopt: {
         enabled: false,
     },
-    system_ext_specific: true,
-}
-
-android_app_import {
-    name: "uceShimService",
-    owner: "qcom",
-    apk: "proprietary/system_ext/app/uceShimService/uceShimService.apk",
-    certificate: "platform",
-    dex_preopt: {
-        enabled: false,
-    },
-    system_ext_specific: true,
-}
-
-android_app_import {
-    name: "QtiTelephony",
-    owner: "qcom",
-    apk: "proprietary/system_ext/priv-app/QtiTelephony/QtiTelephony.apk",
-    certificate: "platform",
-    dex_preopt: {
-        enabled: false,
-    },
-    privileged: true,
     system_ext_specific: true,
 }
 
@@ -5566,15 +4632,6 @@ dex_import {
 }
 
 dex_import {
-    name: "remotesimlockmanagerlibrary",
-    owner: "qcom",
-    jars: [
-        "proprietary/product/framework/remotesimlockmanagerlibrary.jar",
-    ],
-    product_specific: true,
-}
-
-dex_import {
     name: "uimgbalibrary",
     owner: "qcom",
     jars: [
@@ -5588,15 +4645,6 @@ dex_import {
     owner: "qcom",
     jars: [
         "proprietary/product/framework/uimgbamanagerlibrary.jar",
-    ],
-    product_specific: true,
-}
-
-dex_import {
-    name: "uimlpalibrary",
-    owner: "qcom",
-    jars: [
-        "proprietary/product/framework/uimlpalibrary.jar",
     ],
     product_specific: true,
 }
@@ -5620,28 +4668,10 @@ dex_import {
 }
 
 dex_import {
-    name: "uimremotesimlocklibrary",
-    owner: "qcom",
-    jars: [
-        "proprietary/product/framework/uimremotesimlocklibrary.jar",
-    ],
-    product_specific: true,
-}
-
-dex_import {
     name: "uimservicelibrary",
     owner: "qcom",
     jars: [
         "proprietary/product/framework/uimservicelibrary.jar",
-    ],
-    product_specific: true,
-}
-
-dex_import {
-    name: "vendor.qti.hardware.radio.qtiradio-V1-java",
-    owner: "qcom",
-    jars: [
-        "proprietary/product/framework/vendor.qti.hardware.radio.qtiradio-V1-java.jar",
     ],
     product_specific: true,
 }
@@ -5800,15 +4830,6 @@ dex_import {
 }
 
 dex_import {
-    name: "qti-telephony-common",
-    owner: "qcom",
-    jars: [
-        "proprietary/system_ext/framework/qti-telephony-common.jar",
-    ],
-    system_ext_specific: true,
-}
-
-dex_import {
     name: "vendor.qti.data.dmapconsent-V1-java",
     owner: "qcom",
     jars: [
@@ -5881,42 +4902,6 @@ dex_import {
 }
 
 dex_import {
-    name: "vendor.qti.data.factory-V2.5-java",
-    owner: "qcom",
-    jars: [
-        "proprietary/system_ext/framework/vendor.qti.data.factory-V2.5-java.jar",
-    ],
-    system_ext_specific: true,
-}
-
-dex_import {
-    name: "vendor.qti.data.factory-V2.6-java",
-    owner: "qcom",
-    jars: [
-        "proprietary/system_ext/framework/vendor.qti.data.factory-V2.6-java.jar",
-    ],
-    system_ext_specific: true,
-}
-
-dex_import {
-    name: "vendor.qti.data.factory-V2.7-java",
-    owner: "qcom",
-    jars: [
-        "proprietary/system_ext/framework/vendor.qti.data.factory-V2.7-java.jar",
-    ],
-    system_ext_specific: true,
-}
-
-dex_import {
-    name: "vendor.qti.data.factory-V2.8-java",
-    owner: "qcom",
-    jars: [
-        "proprietary/system_ext/framework/vendor.qti.data.factory-V2.8-java.jar",
-    ],
-    system_ext_specific: true,
-}
-
-dex_import {
     name: "vendor.qti.data.factoryservice-V1-java",
     owner: "qcom",
     jars: [
@@ -5948,15 +4933,6 @@ dex_import {
     owner: "qcom",
     jars: [
         "proprietary/system_ext/framework/vendor.qti.data.mwqemaidlservice-V1-java.jar",
-    ],
-    system_ext_specific: true,
-}
-
-dex_import {
-    name: "vendor.qti.data.slm-V1.0-java",
-    owner: "qcom",
-    jars: [
-        "proprietary/system_ext/framework/vendor.qti.data.slm-V1.0-java.jar",
     ],
     system_ext_specific: true,
 }
@@ -6061,24 +5037,6 @@ dex_import {
 }
 
 dex_import {
-    name: "vendor.qti.hardware.data.connection-V1.0-java",
-    owner: "qcom",
-    jars: [
-        "proprietary/system_ext/framework/vendor.qti.hardware.data.connection-V1.0-java.jar",
-    ],
-    system_ext_specific: true,
-}
-
-dex_import {
-    name: "vendor.qti.hardware.data.connection-V1.1-java",
-    owner: "qcom",
-    jars: [
-        "proprietary/system_ext/framework/vendor.qti.hardware.data.connection-V1.1-java.jar",
-    ],
-    system_ext_specific: true,
-}
-
-dex_import {
     name: "vendor.qti.hardware.data.connectionfactory-V1-java",
     owner: "qcom",
     jars: [
@@ -6106,28 +5064,10 @@ dex_import {
 }
 
 dex_import {
-    name: "vendor.qti.hardware.data.dynamicdds-V1.1-java",
-    owner: "qcom",
-    jars: [
-        "proprietary/system_ext/framework/vendor.qti.hardware.data.dynamicdds-V1.1-java.jar",
-    ],
-    system_ext_specific: true,
-}
-
-dex_import {
     name: "vendor.qti.hardware.data.dynamicddsaidlservice-V1-java",
     owner: "qcom",
     jars: [
         "proprietary/system_ext/framework/vendor.qti.hardware.data.dynamicddsaidlservice-V1-java.jar",
-    ],
-    system_ext_specific: true,
-}
-
-dex_import {
-    name: "vendor.qti.hardware.data.flow-V1.0-java",
-    owner: "qcom",
-    jars: [
-        "proprietary/system_ext/framework/vendor.qti.hardware.data.flow-V1.0-java.jar",
     ],
     system_ext_specific: true,
 }
@@ -6182,15 +5122,6 @@ dex_import {
     owner: "qcom",
     jars: [
         "proprietary/system_ext/framework/vendor.qti.hardware.data.ka-V1-java.jar",
-    ],
-    system_ext_specific: true,
-}
-
-dex_import {
-    name: "vendor.qti.hardware.data.latency-V1.0-java",
-    owner: "qcom",
-    jars: [
-        "proprietary/system_ext/framework/vendor.qti.hardware.data.latency-V1.0-java.jar",
     ],
     system_ext_specific: true,
 }
@@ -6583,15 +5514,6 @@ dex_import {
 }
 
 dex_import {
-    name: "vendor.qti.latency-V2.1-java",
-    owner: "qcom",
-    jars: [
-        "proprietary/system_ext/framework/vendor.qti.latency-V2.1-java.jar",
-    ],
-    system_ext_specific: true,
-}
-
-dex_import {
     name: "vendor.qti.latency-V2.2-java",
     owner: "qcom",
     jars: [
@@ -6778,18 +5700,4 @@ cc_prebuilt_binary {
     },
     prefer: true,
     system_ext_specific: true,
-}
-
-install_symlink {
-    name: "system_ext_priv-app_ims_lib_arm64_libimscamera_jni_so",
-    system_ext_specific: true,
-    installed_location: "priv-app/ims/lib/arm64/libimscamera_jni.so",
-    symlink_target: "/system_ext/lib64/libimscamera_jni.so",
-}
-
-install_symlink {
-    name: "system_ext_priv-app_ims_lib_arm64_libimsmedia_jni_so",
-    system_ext_specific: true,
-    installed_location: "priv-app/ims/lib/arm64/libimsmedia_jni.so",
-    symlink_target: "/system_ext/lib64/libimsmedia_jni.so",
 }
