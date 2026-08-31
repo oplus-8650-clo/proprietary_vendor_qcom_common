@@ -47,9 +47,15 @@ service qccsyshal@1.2-service /system/system_ext/bin/qccsyshal@1.2-service
     class hal
     user system
     group misc system
+    interface vendor.qti.hardware.qccsyshal@1.2::IQccsyshal qccsyshal
+    interface vendor.qti.hardware.qccsyshal@1.1::IQccsyshal qccsyshal
+    interface vendor.qti.hardware.qccsyshal@1.0::IQccsyshal qccsyshal
 
 on property:hwservicemanager.disabled=true
     stop qccsyshal@1.2-service
 
 on property:init.svc.qcc-native=running
+    stop qccsyshal@1.2-service
+
+on property:persist.vendor.sys.location.xtra.native_download=true
     stop qccsyshal@1.2-service
